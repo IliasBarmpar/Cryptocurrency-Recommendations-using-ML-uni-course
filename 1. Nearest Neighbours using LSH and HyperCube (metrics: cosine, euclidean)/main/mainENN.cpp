@@ -16,14 +16,12 @@ int main(int argc, char* argv[]){
 	srand(time(nullptr));
 
 /*			     Read Input 				*/
-	string inputfile1;
-	cout << "Please type in the location for the dataset." << endl;
-	getline(cin, inputfile1);
+	string inputfile1 = "input/input_small_fixed";
 	list< myVector > entryPoints;
 	readFile(inputfile1, &entryPoints);
 
 /* 			    Read Queries 				*/
-	string inputfile2 = "query_small"; //TODO User input
+	string inputfile2 = "input/query_small_fixed"; //TODO User input
 	list< myVector > queries;
 	readFile(inputfile2, &queries);
 

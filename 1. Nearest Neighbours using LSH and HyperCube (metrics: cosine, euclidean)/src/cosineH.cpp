@@ -1,4 +1,4 @@
-#include "cosineH.hpp"
+#include "cosineH.hpp" 
 
 //Creates an Hmember for the cosine family by taking D ammount of normally distributed numbers
 cosineH::cosineH(){

@@ -24,18 +24,18 @@ static int L = 5;
 
 int main(int argc, char* argv[]){
 	cout << "LSH" << endl;
-	int K = 4; //TODO cin
+	int K = 4; //TODO possibly cin
 	srand(time(nullptr));
 
 /*			     Read Input 				*/
-	string inputfile1 = "input_small_fixed"; //TODO User input
+	string inputfile1 = "input/input_small_fixed"; //TODO User input
 	list< myVector > entryPoints;
 	readFile(inputfile1, &entryPoints);
 
 
 
 /* 			    Read Queries 				*/
-	string inputfile2 = "query_small_fixed"; //TODO User input
+	string inputfile2 = "input/query_small_fixed"; //TODO User input
 	list< myVector > queries;
 	readFile(inputfile2, &queries);
 
@@ -87,11 +87,10 @@ int main(int argc, char* argv[]){
 	list<double> exactNNResults = NNSearch ( &queries, &entryPoints, metric);
 
 	//Process that iterates from every single list we've made ( R neighbors, Nearest neighbor, distance <metric>, distance <true>, time <metric>, time <true> )
-	cout << "Please give an output file name." << endl;
-	string ofname;
-	getline(cin, ofname);
-	ofname = "abc.txt";
-	ofstream outputFile(ofname);
+	//cout << "Please give an output file name." << endl;
+	//string ofname;
+	//getline(cin, ofname);
+	ofstream outputFile("LSHresults");
 
 	list<double>::iterator mindistLSH_it = mindistList.begin();
 	list<double>::iterator mindistENN_it = exactNNResults.begin();
