@@ -8,6 +8,7 @@ SOURCES := $(shell find . -name '*.cpp')
 # find headers
 HEADERS := $(shell find . -name '*.h')
 
+# outpu
 OUTPUT := build/Kmeans
 
 # Everything depends on the output
