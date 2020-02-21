@@ -8,17 +8,6 @@
 #include <cstdio>
 
 void readFile(string filename, list<myVector> *points){
-	/*
-	cout << "fn: " << filename << endl;
-	char szTmp[32];
-	char pBuf[500];
-	sprintf(szTmp, "/proc/%d/exe", getpid());
-	int bytes = min(readlink(szTmp, pBuf, 500), (ssize_t)499);
-	if(bytes >= 0)
-		pBuf[bytes] = '\0';
-	cout << "pBuf[500]: " <<  pBuf << endl;
-	*/
-
  	ifstream myfile (filename);
 	// Read entry points
 	if (myfile.is_open()){
@@ -28,7 +17,8 @@ void readFile(string filename, list<myVector> *points){
 		while( getline (myfile, line)){
 			temp = new myVector();
 			istringstream buf(line);
-			string word; buf >> word;
+			string word; 
+			buf >> word;
 			temp->id = stoi(word,&sz);
 			while(buf >> word){
 				int tempint = stoi(word,&sz);
@@ -38,8 +28,9 @@ void readFile(string filename, list<myVector> *points){
 			temp = NULL;
 		}
 		myfile.close();
+	}else{
+		cout << "Unable to open a file" << endl;
 	}
-	else cout << "Unable to open a file" << endl;
 }
 
 

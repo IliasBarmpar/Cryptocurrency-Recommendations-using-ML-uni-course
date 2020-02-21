@@ -25,8 +25,8 @@ class cosineFamily : public Hfamily{
 	cosineFamily(int );
 	~cosineFamily(){}
 
-	void getValuesOfH(vector<int> *, vector<int> *);
 	int getMapSize(int );
+	void getValuesOfH(vector<int> *, vector<int> *);	
 	double getDistance(vector< int > *, vector< int > *);
 };
 #endif

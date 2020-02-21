@@ -24,18 +24,18 @@ static int L = 5;
 
 int main(int argc, char* argv[]){
 	cout << "LSH" << endl;
-	int K = 4; //TODO possibly cin
+	int K = 4; 										//TODO possibly cin
 	srand(time(nullptr));
 
 /*			     Read Input 				*/
-	string inputfile1 = "input/input_small_fixed"; //TODO User input
+	string inputfile1 = "input/input_small_fixed";	//TODO User input
 	list< myVector > entryPoints;
 	readFile(inputfile1, &entryPoints);
 
 
 
 /* 			    Read Queries 				*/
-	string inputfile2 = "input/query_small_fixed"; //TODO User input
+	string inputfile2 = "input/query_small_fixed";	//TODO User input
 	list< myVector > queries;
 	readFile(inputfile2, &queries);
 
@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
 	LSH lsh;
 	HashTable *htable;
 	for(int j = 0; j < L; ++j){  // for each hashtable
-		htable    = new HashTable(metric, entryPoints.size(), K);
+		htable = new HashTable(metric, entryPoints.size(), K);
 		for(list< myVector >::iterator l_it = entryPoints.begin(); l_it != entryPoints.end(); ++l_it)
 			htable->putVector(&(*l_it));
 		lsh.addTable(htable);
@@ -61,20 +61,22 @@ int main(int argc, char* argv[]){
 	double _Rr = 400;
 	if(_Rr!=0){
 		for(list< myVector >::iterator l_it = queries.begin(); l_it != queries.end(); ++l_it){
-			lsh.rangeSearch(&(*l_it), &_Rr, &rsTemp);
-			//do{ //TODO
-			//	if(rsTemp.size()==0)
-			//		_R = _R + _R/4;
-			//}while(rsTemp.size()==0);
+			lsh.rangeSearch(&(*l_it), &_Rr, &rsTemp); //TODO1 under here
 			rangeSearchResults.push_back(rsTemp);
 			rsTemp.clear();
 		}
 	}
+	//do{ //TODO1
+	//	if(rsTemp.size()==0)
+	//		_R = _R + _R/4;
+	//}while(rsTemp.size()==0);
+
+
+
 	// Approximate NN
 	list<myVector *> approxNNSearchResults;
 	myVector *nnTemp;
 	list<double> mindistList;
-	list< myVector >::iterator l_it = queries.begin();
 	for(list< myVector >::iterator l_it = queries.begin(); l_it != queries.end(); ++l_it){
 		double mindist = numeric_limits<double>::max();
 		lsh.approxNNSearch(&(*l_it), &nnTemp, &mindist);
@@ -90,13 +92,12 @@ int main(int argc, char* argv[]){
 	//cout << "Please give an output file name." << endl;
 	//string ofname;
 	//getline(cin, ofname);
-	ofstream outputFile("LSHresults");
-
-	list<double>::iterator mindistLSH_it = mindistList.begin();
-	list<double>::iterator mindistENN_it = exactNNResults.begin();
-	list<list<myVector *>>::iterator rS_it = rangeSearchResults.begin();
-	list<myVector *>::iterator aNN_it = approxNNSearchResults.begin();
-	for(list< myVector >::iterator l_it = queries.begin(); l_it != queries.end(); ++l_it, ++rS_it, ++aNN_it, ++mindistLSH_it, ++mindistENN_it){
+	ofstream outputFile("output/LSHresults");
+	list<double>::iterator mindistLSH_it	= mindistList.begin();
+	list<double>::iterator mindistENN_it	= exactNNResults.begin();
+	list<list<myVector *>>::iterator rS_it	= rangeSearchResults.begin();
+	list<myVector *>::iterator aNN_it		= approxNNSearchResults.begin();
+	for(list< myVector >::iterator l_it		= queries.begin(); l_it != queries.end(); ++l_it, ++rS_it, ++aNN_it, ++mindistLSH_it, ++mindistENN_it){
 		outputFile << "Query: " << (*l_it).id << endl;
 		if(rangeSearchResults.size() > 0){
 			outputFile << "R-near neighbors: " << endl;

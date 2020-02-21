@@ -17,7 +17,7 @@ int HashTable::euclideanHashFunction(myVector *valueP){
 	for(vector<int>::iterator hfam_it = hvalues.begin(); hfam_it != hvalues.end(); ++hfam_it, ++rfam_it){
 		temp  = (*rfam_it)*( (*hfam_it) );
 		hvalue += ((temp % mapSize) + mapSize) % mapSize;
-	}//TODO Some overflow prevention
+	} //TODO Some overflow prevention
 	hvalue = ((hvalue % mapSize) + mapSize) % mapSize;
 	return hvalue;
 }
@@ -106,7 +106,7 @@ void HashTable::rangeSearch(myVector *query, double *R, list<myVector *> *rsTemp
 	}
 }
 
-void HashTable::printNstuff(){
+void HashTable::printer(){
 	for(int i = 0; i < mapSize; i++){
 		HashNode *tempEntry = map[i];
 		if(tempEntry==NULL){
@@ -136,68 +136,3 @@ void LSH::approxNNSearch(myVector *query, myVector **nnTemp, double *mindist ){
 	for(vector<HashTable>::iterator ht_it = hashtables.begin(); ht_it != hashtables.end(); ++ht_it)
 		(ht_it)->approxNNSearch(query, nnTemp, mindist);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

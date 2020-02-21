@@ -47,7 +47,7 @@ class HashTable{
 	void rangeSearch(myVector *, double *, list<myVector *> *);
 
 	//Temp function
-	void printNstuff();
+	void printer();
 };
 
 
@@ -59,10 +59,10 @@ public:
 
 	void addTable(HashTable *);
 
+	void approxNNSearch(myVector *, myVector **, double *);
+
 	// Range Search (r, c) we assume c = 1
 	void rangeSearch(myVector*, double *, list<myVector *> *);
-
-	void approxNNSearch(myVector *, myVector **, double *);
 };
 
 #endif

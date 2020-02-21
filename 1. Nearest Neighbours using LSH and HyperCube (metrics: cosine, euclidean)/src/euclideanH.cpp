@@ -10,8 +10,7 @@ Rfamily *_rfam = NULL; //todo dhlwsh sto cpp extern sto hpp
 
 Rfamily::Rfamily(){
 	for(int i = 0; i < D; ++i){
-		int temp = rand();
-		temp = temp % 200;
+		int temp = rand()% 200;
 		_rfamily.push_back(temp);
 	}
 }
@@ -48,6 +47,8 @@ int euclideanH::calculateValue(vector<int> *_p){ //calculate value given a point
 	return temp;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+
 euclideanFamily::euclideanFamily(int K){
 	TableSize = 2000; //temp
 	if(_rfam == NULL)
@@ -58,16 +59,18 @@ euclideanFamily::euclideanFamily(int K){
 	}
 }
 
+
+int euclideanFamily::getMapSize(int size){
+	return size/4;
+}
+
+
 // simply returns the family of H members
 void euclideanFamily::getValuesOfH(vector<int> *_p, vector<int> *hvalues){
 	for(vector<euclideanH>::iterator hfam_it = hfam.begin(); hfam_it != hfam.end(); ++hfam_it)
 		hvalues->push_back( (*hfam_it).calculateValue(_p) );
 }
 
-int euclideanFamily::getMapSize(int size){
-	TableSize = size/4;
-	return size/4;
-}
 
 double euclideanFamily::getDistance(vector< int > *_q, vector< int > *_p){
 	/*int hflag = 0;

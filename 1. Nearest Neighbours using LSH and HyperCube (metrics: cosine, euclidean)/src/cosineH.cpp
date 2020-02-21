@@ -24,6 +24,8 @@ int cosineH::calculateValue(vector<int> *_p){ //calculate value given a point
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+
 cosineFamily::cosineFamily(int K){
 	for(int i = 0; i < K; i++){
 		cosineH *temp = new cosineH();
@@ -31,10 +33,6 @@ cosineFamily::cosineFamily(int K){
 	}
 }
 
-void cosineFamily::getValuesOfH(vector<int> *_p, vector<int> *hvalues){
-	for(vector<cosineH>::iterator hfam_it = hfam.begin(); hfam_it != hfam.end(); ++hfam_it)
-		hvalues->push_back( (*hfam_it).calculateValue(_p) );
-}
 
 int cosineFamily::getMapSize(int size){ //Needed for other metrics
 	int temp = 1;
@@ -42,6 +40,13 @@ int cosineFamily::getMapSize(int size){ //Needed for other metrics
 		temp = temp*2;
 	return temp;
 }
+
+
+void cosineFamily::getValuesOfH(vector<int> *_p, vector<int> *hvalues){
+	for(vector<cosineH>::iterator hfam_it = hfam.begin(); hfam_it != hfam.end(); ++hfam_it)
+		hvalues->push_back( (*hfam_it).calculateValue(_p) );
+}
+
 
 double cosineFamily::getDistance(vector< int > *_q, vector< int > *_p){
 	//Cosine Distance

@@ -7,12 +7,12 @@ Gfunction::Gfunction(string m, int K){
 		_h = new cosineFamily(K);
 }
 
-void Gfunction::getValuesOfH(vector<int> *_p, vector<int> *hvalues){
-	_h->getValuesOfH(_p, hvalues);
-}
-
 int Gfunction::getMapSize(int size){
 	return _h->getMapSize(size);
+}
+
+void Gfunction::getValuesOfH(vector<int> *_p, vector<int> *hvalues){
+	_h->getValuesOfH(_p, hvalues);
 }
 
 double Gfunction::getDistance(vector<int> *_q, vector<int> *_p){

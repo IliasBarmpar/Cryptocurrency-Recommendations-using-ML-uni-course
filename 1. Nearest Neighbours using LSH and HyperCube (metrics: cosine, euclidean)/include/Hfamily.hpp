@@ -14,9 +14,9 @@ class Hfamily{
 
 	virtual ~Hfamily(){}
 
-	virtual void getValuesOfH(vector<int> *_p, vector<int> *hvalues){}
-
 	virtual int getMapSize(int size){}
+	
+	virtual void getValuesOfH(vector<int> *_p, vector<int> *hvalues){}
 
 	virtual double getDistance(vector<int> *_q, vector<int> *_p){}
 };

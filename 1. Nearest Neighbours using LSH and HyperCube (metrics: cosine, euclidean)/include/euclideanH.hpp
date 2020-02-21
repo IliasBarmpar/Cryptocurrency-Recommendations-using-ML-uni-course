@@ -38,8 +38,8 @@ class euclideanFamily : public Hfamily{
 	euclideanFamily(int K);
 	~euclideanFamily(){}
 
-	void getValuesOfH(vector<int> *, vector<int> *);
 	int getMapSize(int );
+	void getValuesOfH(vector<int> *, vector<int> *);	
 	double getDistance(vector< int > *, vector< int > *);
 };
 
