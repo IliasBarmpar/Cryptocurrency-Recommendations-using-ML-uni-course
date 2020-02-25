@@ -50,7 +50,6 @@ int euclideanH::calculateValue(vector<int> *_p){ //calculate value given a point
 ///////////////////////////////////////////////////////////////////////////////////////
 
 euclideanFamily::euclideanFamily(int K){
-	TableSize = 2000; //temp
 	if(_rfam == NULL)
 		_rfam = new Rfamily();
 	for(int i = 0; i < K; i++){ //TODO random if need be.

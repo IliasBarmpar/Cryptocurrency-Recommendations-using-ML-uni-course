@@ -18,6 +18,7 @@ class Gfunction{ // G basically sets its chosen h combination with a single poin
 	~Gfunction(){}
 
 	int getMapSize(int );
+	Hfamily* getHfamilyRef();
 	void getValuesOfH(vector<int> *, vector<int> *);
 	double getDistance(vector<int> *, vector<int> *);
 };

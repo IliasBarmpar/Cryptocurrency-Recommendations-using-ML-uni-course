@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
 	// Range Search
 	list<list<myVector *>> rangeSearchResults;
 	list<myVector *> rsTemp;
-	double _Rr = 400;
+	double _Rr = 400; //TODO cin
 	if(_Rr!=0){
 		for(list< myVector >::iterator l_it = queries.begin(); l_it != queries.end(); ++l_it){
 			lsh.rangeSearch(&(*l_it), &_Rr, &rsTemp); //TODO1 under here
@@ -109,12 +109,13 @@ int main(int argc, char* argv[]){
 				}
 			}
 		}
-		outputFile << "Nearest neighbor: " << (*aNN_it)->id << endl;
-		outputFile << "distanceLSH: " << (*mindistLSH_it) << endl;
-		outputFile << "distanceTrue: " << (*mindistENN_it) << endl;
-		outputFile << "tLSH: " << endl;
-		outputFile << "tTrue: " << endl << endl;
+		outputFile << "Nearest neighbor: " 	<< (*aNN_it)->id << endl;
+		outputFile << "distanceLSH: " 		<< (*mindistLSH_it) << endl;
+		outputFile << "distanceTrue: " 		<< (*mindistENN_it) << endl;
+		outputFile << "tLSH: " 				<< endl;
+		outputFile << "tTrue: " 			<< endl << endl;
 	}
+	
 	return 0;
 }
 
