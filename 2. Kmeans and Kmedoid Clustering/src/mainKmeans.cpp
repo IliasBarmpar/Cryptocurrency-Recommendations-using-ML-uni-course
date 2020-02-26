@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){
 	string inputfile, conffile, outputfile, metric; //Read Cmd
 	int inopt, asopt, upopt;						//Read Cmd
 	vector<myVector> trainSet;						//Read Csv
-	int kClusters, kNum, lNum, mNum, pNum; 		//Read Conf
+	int kClusters, kNum, lNum, mNum, pNum; 			//Read Conf
 
 	/* Read Cmd	*/
 	if( readCmd(argc, argv, &inputfile, &conffile, &outputfile, &metric, &inopt, &asopt, &upopt) ) return -1;
