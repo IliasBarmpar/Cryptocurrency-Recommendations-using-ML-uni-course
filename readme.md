@@ -1,3 +1,17 @@
+# Cryptocurrency Recomendations with Machine Learning Techniques
+
+The project is seperated in three parts:
+
+1. Supervised Learning: Nearest Neighbor and Range Search using LSH and HyperCube (metrics used: cosine similarity, euclidean distance)
+
+1. Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options.
+   1. Initialization
+   1. Assignment
+   1. Update
+   
+1. Cryptocurency Recommendations using LSH and Clustering (with Cross Validation)
+
+
 Test
 
 # Test
