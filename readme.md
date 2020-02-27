@@ -8,22 +8,21 @@ Secondly, given a set of d-diamentional vectors we train a model that finds
 The project is seperated in three parts:
 
 1. **Supervised Learning: Nearest Neighbor and Range Search using LSH and HyperCube (metrics used: cosine similarity, euclidean distance)**
-
-  Given a set of d-diamentional vectors we train a model that finds the Nearest Neighbor and does a Range Search given a set of queries, using the approximation methos: LSH and Hypercube. Those results are then compared with their brute-force counterpart.
+  * Given a set of d-diamentional vectors we train a model that finds the Nearest Neighbor and does a Range Search given a set of queries, using the approximation methos: LSH and Hypercube. Those results are then compared with their brute-force counterpart.
 
 1. **Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options. (with Silhouette)**
+    * Given a set of d-diamentional vectors we train a model that finds
 
-  Given a set of d-diamentional vectors we train a model that finds
-
-  Options:
-   * Initialization:
+   * Options:
+   
+   * Initialization
       - Random selection
       - K-means++
-   * Assignment:
+   * Assignment
       - Lloyd's assignment
       - Assignment by Range Search with LSH
       - Assignment by Range Search with Hypercube
-   * Update:
+   * Update
       - K-means
       - Partitioning Around Medoids
        
