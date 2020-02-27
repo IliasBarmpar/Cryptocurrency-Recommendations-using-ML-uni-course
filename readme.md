@@ -1,10 +1,18 @@
 # Cryptocurrency Recommendations with Machine Learning Techniques
+In this project we are given the task of training a model for cryptocurrency recommendations. 
+
+Secondly, given a set of d-diamentional vectors we train a model that finds
+
+
 
 The project is seperated in three parts:
 
-1. Supervised Learning: Nearest Neighbor and Range Search using LSH and HyperCube (metrics used: cosine similarity, euclidean distance)
+1. **Supervised Learning: Nearest Neighbor and Range Search using LSH and HyperCube (metrics used: cosine similarity, euclidean distance)**
+  Given a set of d-diamentional vectors we train a model that finds the Nearest Neighbor and does a Range Search given a set of queries, using the approximation methos: LSH and Hypercube. Those results are then compared with their brute-force counterpart.
 
-1. Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options.
+1. **Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options. (with Silhouette)**
+  Given a set of d-diamentional vectors we train a model that finds
+  Options:
    * Initialization:
       - Random selection
       - K-means++
@@ -14,20 +22,19 @@ The project is seperated in three parts:
       - Assignment by Range Search with Hypercube
    * Update:
       - K-means
-      - Partitioning Around Medoids      
+      - Partitioning Around Medoids
+       
 
-1. Cryptocurency Recommendations using LSH and Clustering (with Cross Validation)
+1. **Cryptocurrency Recommendations using LSH Range Search and Clustering (with Cross Validation)**
 
-
-Test
-
-# Not it
 
 # Test
 
 ## Test
 
 ### Test
+
+Test
 
 *This text will be italic*
 
