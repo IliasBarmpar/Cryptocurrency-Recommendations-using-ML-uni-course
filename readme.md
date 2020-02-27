@@ -7,9 +7,14 @@ The project is seperated in three parts:
 1. Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options.
    * Initialization:
       - Random selection
-      - Kmeans++
+      - K-means++
    * Assignment:
-   * Update:        
+      - Lloyd's assignment
+      - Assignment by Range Search with LSH
+      - Assignment by Range Search with Hypercube
+   * Update:
+      - K-means
+      - Partitioning Around Medoids      
 
 1. Cryptocurency Recommendations using LSH and Clustering (with Cross Validation)
 
