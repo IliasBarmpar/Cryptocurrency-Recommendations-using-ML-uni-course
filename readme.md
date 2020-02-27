@@ -5,11 +5,11 @@ The project is seperated in three parts:
 1. Supervised Learning: Nearest Neighbor and Range Search using LSH and HyperCube (metrics used: cosine similarity, euclidean distance)
 
 1. Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options.
-   * Initialization
-   * Assignment
-   * Update
-
-abc
+   * Initialization:
+      - Random selection
+      - Kmeans++
+   * Assignment:
+   * Update:        
 
 1. Cryptocurency Recommendations using LSH and Clustering (with Cross Validation)
 
