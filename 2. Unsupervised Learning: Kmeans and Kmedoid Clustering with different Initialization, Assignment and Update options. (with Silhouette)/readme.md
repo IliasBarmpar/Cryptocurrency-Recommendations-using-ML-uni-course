@@ -1,5 +1,5 @@
-**Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options. (with Silhouette)**
-    * Given a set of d-diamentional vectors we train a model that finds clusters given a set of options include:
+## Unsupervised Learning: Kmeans and Kmedoid Clustering with different Initialization, Assignment and Update options. (with Silhouette)
+    Given a set of d-diamentional vectors we train a model that finds clusters given a set of options include:
       * Initialization
         - Random selection
         - K-means++
